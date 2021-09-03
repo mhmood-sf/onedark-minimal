@@ -3,8 +3,8 @@
 This is a very very minimal port of onedark to lua. It strips the colorscheme of lots of features:
 
 - No support for cterm, only gui. If you are using a modern terminal, you can `set termguicolors` to use the gui colors on your terminal.
-- No support for language-specific highlighting. You can instead use treesitter for language-specific highlighting.
-- No support for extra plugins (except Neovim LSP) or statuslines. If you would like support for plugins, the highlight function is exposed (`local hi = require "onedark-minimal".hi)`
+- No support for language-specific highlighting. You can instead use treesitter for improved language-specific highlighting.
+- No support for extra plugins (except Neovim LSP) or statuslines. If you would like support for plugins, you can make use of the exposed highlight function (see below).
 
 ### Installation
 
@@ -12,7 +12,7 @@ Use your preferred plugin manager to clone this repo.
 
 ### Usage
 
-The `g:onedark_hide_endofbuffer` option from the original colorscheme is supported. Set this to true if you'd like to hide the tilde characters (`~`) markring the end of buffer.
+The `g:onedark_hide_endofbuffer` option from the original colorscheme is supported. Set this to true if you'd like to hide the tilde characters (`~`) marking the end of buffer.
 
 Although cterm is not supported at all, a `g:onedark_use_italics` option is provided. Italics are disabled by default, if your terminal has support and you would like to use it, set it to true.
 
