@@ -1,6 +1,6 @@
 # onedark-minimal
 
-This is a very very minimal port of onedark to lua. It strips the colorscheme of lots of features:
+This is a very (very) minimal port of [onedark.vim](https://github.com/joshdick/onedark.vim) to lua. It strips the colorscheme of lots of features:
 
 - No support for cterm, only gui. If you are using a modern terminal, you can `set termguicolors` to use the gui colors on your terminal.
 - No support for language-specific highlighting. You can instead use treesitter for improved language-specific highlighting.
