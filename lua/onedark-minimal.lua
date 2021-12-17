@@ -149,8 +149,8 @@ if hide_bufend then
     hi("EndOfBuffer", { fg = black })
 end
 
-hi("TermCursor",       { fg = cyan })
-hi("TermCursorNC",     { fg = comment_grey })
+hi("TermCursor",       { bg = blue })
+hi("TermCursorNC",     { bg = comment_grey })
 hi("ErrorMsg",         { fg = red })
 hi("VertSplit",        { fg = vertsplit })
 hi("Folded",           { fg = comment_grey })
@@ -192,7 +192,7 @@ hi("Title",            { fg = green })
 hi("Visual",           { bg = visual_grey })
 hi("VisualNOS",        { bg = visual_grey })
 hi("WarningMsg",       { fg = yellow })
-hi("Whitespace",       {})
+hi("Whitespace",       { fg = gutter_fg_grey })
 hi("WildMenu",         { fg = black, bg = blue })
 
 -- Diagnostic Groups (descriptions and ordering from `:h vim.diagnostic`)
