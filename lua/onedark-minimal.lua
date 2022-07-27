@@ -2,33 +2,41 @@
 
 Color scheme for reference (copied from original repo):
 
-+---------------------------------------------+
-|  Color Name  |         RGB        |   Hex   |
-|--------------+--------------------+---------|
-| Black        | rgb(40, 44, 52)    | #282c34 |
-|--------------+--------------------+---------|
-| White        | rgb(171, 178, 191) | #abb2bf |
-|--------------+--------------------+---------|
-| Light Red    | rgb(224, 108, 117) | #e06c75 |
-|--------------+--------------------+---------|
-| Dark Red     | rgb(190, 80, 70)   | #be5046 |
-|--------------+--------------------+---------|
-| Green        | rgb(152, 195, 121) | #98c379 |
-|--------------+--------------------+---------|
-| Light Yellow | rgb(229, 192, 123) | #e5c07b |
-|--------------+--------------------+---------|
-| Dark Yellow  | rgb(209, 154, 102) | #d19a66 |
-|--------------+--------------------+---------|
-| Blue         | rgb(97, 175, 239)  | #61afef |
-|--------------+--------------------+---------|
-| Magenta      | rgb(198, 120, 221) | #c678dd |
-|--------------+--------------------+---------|
-| Cyan         | rgb(86, 182, 194)  | #56b6c2 |
-|--------------+--------------------+---------|
-| Gutter Grey  | rgb(76, 82, 99)    | #4b5263 |
-|--------------+--------------------+---------|
-| Comment Grey | rgb(92, 99, 112)   | #5c6370 |
-+---------------------------------------------+
+One addition made - if onedark_constrast is true, it
+uses a darker black for the background, taken from
+catppuccin, named Black0 in the table below.
+
++-----------------------------------------------+
+|  Color Name    |         RGB        |   Hex   |
+|----------------+--------------------+---------|
+| Black 0        | rgb()              | #161320 |
+|----------------+--------------------+---------|
+| Black          | rgb(40, 44, 52)    | #282c34 |
+|----------------+--------------------+---------|
+| White          | rgb(171, 178, 191) | #abb2bf |
+|----------------+--------------------+---------|
+| Light Red      | rgb(224, 108, 117) | #e06c75 |
+|----------------+--------------------+---------|
+| Dark Red       | rgb(190, 80, 70)   | #be5046 |
+|----------------+--------------------+---------|
+| Green          | rgb(152, 195, 121) | #98c379 |
+|----------------+--------------------+---------|
+| Light Yellow   | rgb(229, 192, 123) | #e5c07b |
+|----------------+--------------------+---------|
+| Dark Yellow    | rgb(209, 154, 102) | #d19a66 |
+|----------------+--------------------+---------|
+| Blue           | rgb(97, 175, 239)  | #61afef |
+|----------------+--------------------+---------|
+| Magenta        | rgb(198, 120, 221) | #c678dd |
+|----------------+--------------------+---------|
+| Cyan           | rgb(86, 182, 194)  | #56b6c2 |
+|----------------+--------------------+---------|
+| Gutter Grey    | rgb(76, 82, 99)    | #4b5263 |
+|----------------+--------------------+---------|
+| Comment Grey   | rgb(92, 99, 112)   | #5c6370 |
+|----------------+--------------------+---------|
+| Comment Grey 0 | rgb(92, 99, 112)   | #5c6370 |
++-----------------------------------------------+
 
 --]]
 
@@ -41,9 +49,14 @@ end
 
 vim.g.colors_name = "onedark-minimal"
 
+local bg_black = vim.g.onedark_contrast and "#161320" or "#282c34"
+local fg_white = vim.g.onedark_contrast and "#D9E0EE" or "#ABB2BF"
+local default_comment_grey = vim.g.onedark_contrast and "#6E6C7E" or "#5C6370"
+
 -- Define colors. Allow overrides.
 local ovr = vim.g.onedark_overrides or {}
 
+local black          = ovr.black          or "#282C34"
 local red            = ovr.red            or "#E06C75"
 local dark_red       = ovr.dark_red       or "#BE5046"
 local green          = ovr.green          or "#98C379"
@@ -53,10 +66,9 @@ local blue           = ovr.blue           or "#61AFEF"
 local purple         = ovr.purple         or "#C678DD"
 local cyan           = ovr.cyan           or "#56B6C2"
 local white          = ovr.white          or "#ABB2BF"
-local black          = ovr.black          or "#282C34"
-local foreground     = ovr.foreground     or "#ABB2BF"
-local background     = ovr.background     or "#282C34"
-local comment_grey   = ovr.comment_grey   or "#5C6370"
+local foreground     = ovr.foreground     or fg_white
+local background     = ovr.background     or bg_black
+local comment_grey   = ovr.comment_grey   or default_comment_grey
 local gutter_fg_grey = ovr.gutter_fg_grey or "#4B5263"
 local cursor_grey    = ovr.cursor_grey    or "#2C323C"
 local visual_grey    = ovr.visual_grey    or "#3E4452"
